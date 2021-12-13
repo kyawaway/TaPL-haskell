@@ -1,2 +1,2 @@
 build:
-	ghc -o Main Main.hs
+	stack ghc Main.hs
