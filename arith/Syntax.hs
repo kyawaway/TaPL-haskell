@@ -10,21 +10,17 @@ data Term = TmTrue
           deriving(Show)
 
 
--- 使ってない
-
 isnumericval :: Term -> Bool
 isnumericval t = case t of
   TmZero -> True
   TmSucc t1 -> isnumericval t1
   _ -> False
 
+--pred が残るとFalse→そういう規約
 
 isval :: Term -> Bool
 isval t = case t of
   TmTrue -> True
   TmFalse -> True
   t -> isnumericval t
-
-
-
 
